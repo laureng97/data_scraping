@@ -2,6 +2,7 @@
 
 # Credits:
 This code was written based off the starter code and completed by Lauren Graves. Trouble shooting assisted through Expert Learning Assistant.
+Nasa Science site was referenced during analysis for confirmation of Mars' days (reference link : https://science.nasa.gov/mars/facts/).
 
 # Background
 You’re now ready to take on a full web-scraping and data analysis project. You’ve learned to identify HTML elements on a page, identify their id and class attributes, and use this knowledge to extract information via both automated browsing with Splinter and HTML parsing with Beautiful Soup. You’ve also learned to scrape various types of information. These include HTML tables and recurring elements, like multiple news articles on a webpage.
@@ -32,15 +33,27 @@ Open the Jupyter Notebook in the starter code folder named part_2_mars_weather.i
 -pressure: The atmospheric pressure at Curiosity's location
 4.Examine the data types that are currently associated with each column. If necessary, cast (or convert) the data to the appropriate datetime, int, or float data types.
 5.Analyze your dataset by using Pandas functions to answer the following questions:
--How many months exist on Mars?
--How many Martian (and not Earth) days worth of data exist in the scraped dataset?
+-How many months exist on Mars? 12
+
+-How many Martian (and not Earth) days worth of data exist in the scraped dataset? 1867
+
 -What are the coldest and the warmest months on Mars (at the location of Curiosity)? To answer this question:
     -Find the average minimum daily temperature for all of the months.
     -Plot the results as a bar chart.
+    Based on the analysis performed with the data, Mars' third month has the lowest average temperature. The eigth month has the highest average temperture.
+    
 -Which months have the lowest and the highest atmospheric pressure on Mars? To answer this question:
     -Find the average daily atmospheric pressure of all the months.
     -Plot the results as a bar chart.
+    Based on the analysis performed with the data, Mars' sixth month has the lowest atmospheric pressure. The ninth month has the highest atmospheric pressure. 
+    
 -About how many terrestrial (Earth) days exist in a Martian year? To answer this question:
     -Consider how many days elapse on Earth in the time that Mars circles the Sun once.
     -Visually estimate the result by plotting the daily minimum temperature of each observation.
+    Based on the visual created using the data, we can see that at 0 terrestrial days, the temperature is approximately -77 degrees celsius. If we look at the next point where the temperature goes through an entire cycle (meaning a high point of around -63 degrees celsius and a low point of around -87 degrees celsius) and reaches -77 degrees celsius, the next number for terrestrial days is approximately 700 terrestrial days.
+    We can also use the peaks to estimate the number of terrestrial days in a martian year. Looking at the highest peaks around 850 terrestrial days and 1500 days, we see a difference of around 700 days. 
+    According to NASA Science, Mars completes a rotation every 24.6 hours and a year on Mars lasts approximately 669.6 sols (short for solar days). 
+    Based on this logic, one rotation for Earth is 23.9 hours. The math is simple, 24.6 hours/23.9 hours * 669.6 sols. This gives us approximately 689 days for Earth. This is very close to the provided number on Nasa Science's site of 687 days. 
+    My visual estimate of around 700 terrestrial days is very close to the 687 terrestrial days provided by Nasa Science. (reference link : https://science.nasa.gov/mars/facts/)
 6.Export the DataFrame to a CSV file.
+The CSV file is labeled 'mars_weather_analysis.csv'.
